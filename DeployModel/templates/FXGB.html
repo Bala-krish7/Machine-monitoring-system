@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Failure prediction-XGB</title>
+   {% load static %}
+
+   <link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+
+</head>
+<body>
+   
+<div class="form-container">
+
+   <form action="{% url 'result1' %}">
+      {% csrf_token %}
+      <input type="text" required name="AT" required placeholder="Enter the Air temperature" autocomplete="off">
+      <input type="text" required name="PT" required placeholder="Enter the Process temperature" autocomplete="off">
+      <input type="text" required name="RS" required placeholder="Enter the Rotational Speed" autocomplete="off">
+      <input type="text" required name="T" required placeholder="Enter the Torque" autocomplete="off">
+      <input type="text" required name="TW" required placeholder="Enter the Tool wear" autocomplete="off">
+      <input type="submit" name="submit" value="Predict Now" class="form-btn">
+   </form>
+
+</div>
+
+</body>
+</html>
